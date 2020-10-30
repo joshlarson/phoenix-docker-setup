@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  web:
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# ! Replace <project_name here !
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    build: <project_name>
+    working_dir: "/app"
+    volumes:
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# ! Replace <project_name here !
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      - "./<project_name>/:/app"
+      - "/app/deps"
+      - "/app/_build"
+      - "/app/assets/node_modules"
+      - "/app/priv/static"
+    ports:
+      - 4000:4000
+    depends_on:
+      - db
+  db:
+    image: postgres:9.6
+    volumes:
+        - ./tmp/db_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+                

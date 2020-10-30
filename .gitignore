@@ -1,0 +1,5 @@
+# Temp data directory for the db image
+tmp/
+
+# Emacs autosave files
+*~
