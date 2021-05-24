@@ -1,4 +1,4 @@
-FROM elixir:1.10.4
+FROM elixir:1.12.0
 
 RUN apt-get update -y
 RUN apt-get install -y npm inotify-tools

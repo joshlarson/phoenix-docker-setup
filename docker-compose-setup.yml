@@ -2,7 +2,7 @@ version: "3"
 
 services:
   setup:
-    image: elixir:1.10.4
+    image: elixir:1.12.0
     working_dir: "/app"
     volumes:
       - "./:/app"
