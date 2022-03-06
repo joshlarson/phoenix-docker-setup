@@ -29,7 +29,7 @@ In that container, run
 
 
 ```
-mix archive.install hex phx_new 1.5.9
+mix archive.install hex phx_new 1.6.6
 ```
 
 And say yes to the prompts. Now run
@@ -40,20 +40,6 @@ mix phx.new <project_name>
 
 With whatever project name you choose. When it prompts you to fetch and install dependencies, say
 "yes" (we don't need the dependencies right now, but we will need `mix.lock`).
-
-Install `npm` with
-
-```
-apt-get update
-apt-get install npm
-```
-
-And then install the node dependencies (once again, we don't need the dependencies, but we do need
-`package-lock.json`) with:
-
-```
-cd <project_name>/assets && npm install && node node_modules/webpack/bin/webpack.js --mode development
-```
 
 Exit out of this shell and you should now be back on your host machine. You should see a folder called
 `<project_name>` (you know, whatever you named your project). Look it over to make sure it looks good.
@@ -80,10 +66,9 @@ You'll need to make the following changes:
  - Remove the following folders:
    - `<project_name>/deps`
    - `<project_name>/_build`
-   - `<project_name>/assets/node_modules`
-   - `<project_name>/priv/static`
- - In `<project_name>/config/`, open up `<dev.exs>` and `<test.exs>`. In both files, change the `hostname`
-   field in the database section (near the top) to `"db"` instead of `"localhost"`.
+ - In `<project_name>/config/`, open up `dev.exs` and `test.exs`. In both files, change the `hostname`
+   field in the database section (near the top) to `"db"` instead of `"localhost"`. In `dev.exs`, also
+   find the `http` config, and change `{127, 0, 0, 1}` to `{0, 0, 0, 0}`.
 
 That's the code changes you need to make. Now build the images with
 
@@ -136,12 +121,3 @@ docker-compose up --build
 ```
 
 Will take care of rebuilding for you.
-
-You'll have to go through a similar ritual if any node dependencies (in `assets/package.json`)
-change. The command to get an updated `package-lock.json` is:
-
-```
-docker-compose run --rm web bash -c "cd assets && npm install && node node_modules/webpack/bin/webpack.js --mode development"
-```
-
-And rebuilding the image is the same - `docker-compose build`.

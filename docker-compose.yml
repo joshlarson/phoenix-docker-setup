@@ -14,14 +14,13 @@ services:
       - "./<project_name>/:/app"
       - "/app/deps"
       - "/app/_build"
-      - "/app/assets/node_modules"
-      - "/app/priv/static"
+      - "/app/priv/static/assets"
     ports:
       - 4000:4000
     depends_on:
       - db
   db:
-    image: postgres:9.6
+    image: postgres:14.2
     volumes:
         - ./tmp/db_data:/var/lib/postgresql/data
     environment:
