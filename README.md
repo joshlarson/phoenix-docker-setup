@@ -14,12 +14,12 @@ I'm assuming that you:
  - Don't want to install Elixir on your machine, and would prefer to have all the Elixir stuff happen
    in docker.
 
-To begin, either clone this repository or copy `docker-compose-setup.yml`, `docker-compose.yml`, and `Dockerfile`
-to your project folder (also copy `.gitignore` if you're using Git)
-
 ## Create the codebase
 
-To start, we're going to create and shell into a temporary Elixir container to create our project.
+To begin, we'll need these four files: `docker-compose-setup.yml`, `docker-compose.yml`, `Dockerfile`, and
+`.gitignore`. Either copy them from this repo to your project folder or clone this repo as your project folder.
+
+To create our project, we'll need a temporary Elixir container. Create that and shell into it with this command:
 
 ```
 docker-compose -f docker-compose-setup.yml run --rm setup bash
