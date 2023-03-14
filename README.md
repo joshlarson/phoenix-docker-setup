@@ -29,7 +29,7 @@ In that container, run
 
 
 ```
-mix archive.install hex phx_new 1.6.6
+mix archive.install hex phx_new 1.7.1
 ```
 
 And say yes to the prompts. Now run
