@@ -2,15 +2,15 @@ version: "3"
 
 services:
   web:
-# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# ! Replace <project_name here !
-# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# ! Replace <project_name> here !
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     build: <project_name>
     working_dir: "/app"
     volumes:
-# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# ! Replace <project_name here !
-# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# ! Replace <project_name> here !
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       - "./<project_name>/:/app"
       - "/app/deps"
       - "/app/_build"
@@ -26,4 +26,3 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-                

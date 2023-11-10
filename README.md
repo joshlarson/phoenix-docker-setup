@@ -25,11 +25,11 @@ To create our project, we'll need a temporary Elixir container. Create that and 
 docker-compose -f docker-compose-setup.yml run --rm setup bash
 ```
 
-In that container, run 
+In that container, run
 
 
 ```
-mix archive.install hex phx_new 1.7.1
+mix archive.install hex phx_new
 ```
 
 And say yes to the prompts. Now run
