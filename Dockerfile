@@ -1,4 +1,4 @@
-FROM elixir:1.15.7
+FROM elixir:1.16.0
 
 RUN apt-get update -y
 RUN apt-get install -y inotify-tools

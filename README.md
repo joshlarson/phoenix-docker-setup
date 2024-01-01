@@ -19,6 +19,14 @@ I'm assuming that you:
 To begin, we'll need these four files: `docker-compose-setup.yml`, `docker-compose.yml`, `Dockerfile`, and
 `.gitignore`. Either copy them from this repo to your project folder or clone this repo as your project folder.
 
+You can easily copy them to your project folder by running this:
+
+```
+curl https://raw.githubusercontent.com/joshlarson/phoenix-docker-setup/main/docker-compose-setup.yml > docker-compose-setup.yml
+curl https://raw.githubusercontent.com/joshlarson/phoenix-docker-setup/main/docker-compose.yml > docker-compose.yml
+curl https://raw.githubusercontent.com/joshlarson/phoenix-docker-setup/main/.gitignore > .gitignore
+```
+
 To create our project, we'll need a temporary Elixir container. Create that and shell into it with this command:
 
 ```
