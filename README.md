@@ -24,6 +24,7 @@ You can easily copy them to your project folder by running this:
 ```
 curl https://raw.githubusercontent.com/joshlarson/phoenix-docker-setup/main/docker-compose-setup.yml > docker-compose-setup.yml
 curl https://raw.githubusercontent.com/joshlarson/phoenix-docker-setup/main/docker-compose.yml > docker-compose.yml
+curl https://raw.githubusercontent.com/joshlarson/phoenix-docker-setup/main/Dockerfile > Dockerfile
 curl https://raw.githubusercontent.com/joshlarson/phoenix-docker-setup/main/.gitignore > .gitignore
 ```
 
